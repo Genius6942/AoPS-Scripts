@@ -15,12 +15,23 @@ class Hax {
 		this.id = AoPS.session.user_id;
 		this.session_id = AoPS.session.id;
 	}
-	
-	get logged_in() {
+	get loggedIn() {
 		if (AoPS.session.user_id != 1) {
 			return true;
 		}
 		return false;
+	}
+	postToAoPS = function (target, data, options = {allowLatexErrors: true;}) {
+		if (typeof target == 'string') {
+			target = this.parseForumURI(target).thread;
+		} else if (typeof target == 'object') {
+			target = target.thread;
+		} else if (typeof target == 'number') {
+			target = parseInt(target);
+		} else {
+			throw new TypeError('type of target is bad');
+		}
+		this.requestToAoPS()// update soon
 	}
 }
 
