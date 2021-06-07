@@ -33,6 +33,9 @@ class Hax {
 		}
 		this.requestToAoPS()// update soon
 	}
+	requestToAoPS = function (body, url = 'https://artofproblemsolving.com/m/community/ajax.php', headers = {}) {
+		return;
+	}
 }
 
 (function () {
