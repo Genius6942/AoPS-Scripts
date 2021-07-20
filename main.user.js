@@ -21,7 +21,7 @@ class Hax {
 		}
 		return false;
 	}
-	postToAoPS = function (target, data, options = {allowLatexErrors: true;}) {
+	postToAoPS = function (target, data, options = {allowLatexErrors: true}) {
 		if (typeof target == 'string') {
 			target = this.parseForumURI(target).thread;
 		} else if (typeof target == 'object') {
@@ -31,12 +31,9 @@ class Hax {
 		} else {
 			throw new TypeError('type of target is bad');
 		}
-		this.requestToAoPS()// update soon
+		this.requestToAoPS();
 	}
-	requestToAoPS = function (body, url = 'https://artofproblemsolving.com/m/community/ajax.php', headers = {}) {
-		return;
-	}
-	ajax =  async function (data) {
+	ajax = async function (data) {
 		let d = "";
 		for (let item of data) {
 			d += item.name+':'+item.value+';'
