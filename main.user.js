@@ -36,6 +36,13 @@ class Hax {
 	requestToAoPS = function (body, url = 'https://artofproblemsolving.com/m/community/ajax.php', headers = {}) {
 		return;
 	}
+	ajax =  async function (data) {
+		let d = "";
+		for (let item of data) {
+			d += item.name+':'+item.value+';'
+		}
+		return await fetch('/m/community/ajax.php', {method: 'POST', headers: {"content-type": "multipart/form-data"}, body: d});
+	}
 }
 
 (function () {
