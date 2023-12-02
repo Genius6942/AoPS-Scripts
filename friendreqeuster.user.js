@@ -20,9 +20,10 @@
     })
     localStorage.setItem('friend-now', (cur() || 2));
     async function dostuff () {
+        const targetFriend = cur();
+        localStorage.setItem('friend-now', cur() + 1);
         await fetch('https://artofproblemsolving.com/m/community/ajax.php', {method: 'POST', headers: {'content-type': "application/x-www-form-urlencoded"}, body: `new_friend=${cur()}&a=send_friend_request&aops_logged_in=true&aops_user_id=${window.AoPS.session.user_id}&aops_session_id=${window.AoPS.session.id}`});
         dostuff();
-        localStorage.setItem('friend-now', cur() + 1);
     }
     function cur () {
         try {
