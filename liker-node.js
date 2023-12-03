@@ -1,7 +1,7 @@
-const startNum = 20000;
+const startNum = 2317000;
 let num = startNum;
 
-const num_threads = 50;
+const num_threads = 15;
 const run_thread = async () => {
   while (true) {
     const num_save = num;
